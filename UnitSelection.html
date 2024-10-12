@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UnitSelection</title>
+</head>
+<style>
+    body{
+        background-color: gray;
+    }
+</style>
+<body>
+    <h1>UnitSelection</h1>
+    <form id="unitForm">
+        <label for="userId">User Id</label>
+        <input type="text" name="userId" id="userId">
+
+        <label for="teacherId">Teacher Id</label>
+        <input type="text" name="teacherId" id="teacherId">
+
+        <label for="courseId">Course Id</label>
+        <input type="text" name="courseId" id="courseId">
+
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>  
+    <script src="../JS Files/UnitSelection.js"></script>
+    
+    <script>
+        document.getElementById('unitForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const userId = document.getElementById('userId').value;
+            const teacherId = document.getElementById('teacherId').value;
+            const courseId = document.getElementById('courseId').value;
+
+            const unitData = {
+                UserId: userId,
+                TeacherId: teacherId,
+                CourseId: courseId
+            };
+
+            const url = 'http://localhost:53012/University/Users/UnitSelection';
+
+            postData(url, unitData);
+        });
+    </script>
+</body>
+</html>

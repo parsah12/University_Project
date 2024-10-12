@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers And Courses Data</title>
+  <style>
+    body{
+      background-color: gray;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    h2{
+    color: black;
+    text-align: center;
+  }
+
+ 
+    
+  </style>
+</head>
+<body>
+ 
+
+  <h1>Teachers And Courses Data</h1>
+
+  <h2>Now You Can See Infomation About Teachers And Courses As Admin</h2>
+ 
+  <div id="demo"></div>
+
+  <script>
+    var url = 'http://localhost:53012/University/Teachers/GetAllTeachersCourses';
+  </script>
+
+
+
+
+  
+  <script src="../JS Files/Infomation.js"></script>
+
+  </script>
+
+  <script>
+    window.onload = function() {
+      loadDoc(url);
+    };
+  </script>
+  <script>
+
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Login Page</title>
+</head>
+<style>
+    body{
+        background-color: gray;
+    }
+</style>
+<body>
+
+<h1>Login</h1>
+
+<form id="adminLoginForm">   
+  <label for="adminName">Admin Name:</label>
+  <input type="text" id="adminName" name="AdminName" required><br><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<p id="message"></p>
+
+<script src="../JS Files/AdminLogin.js"></script>
+
+<script>
+  document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    
+    const adminName = document.getElementById('adminName').value;
+    const password = document.getElementById('password').value;
+
+    const loginData = {
+      AdminName: adminName,
+      Password: password,
+    };
+
+    const url = 'http://localhost:53012/University/Admins/AdminLogin'; 
+    postData(url, loginData);
+  });
+
+</script>
+
+</body>
+</html>

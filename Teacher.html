@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Teacher Data</title>
+</head>
+<style>
+  body{
+      background-color: gray;
+  }
+</style>
+<body>
+
+<h1>Insert Teacher Data</h1>
+
+<form id="teacherForm">
+  <label for="userName">User Name:</label>
+  <input type="text" id="userName" name="userName"><br><br>
+  
+  <label for="password">Password:</label>
+  <input type="text" id="password" name="password"><br><br>
+  <label for="firstName">First Name</label>
+  <input type="text" id="firstName" name="firstName"><br><br>
+  
+  <label for="lastName">Last Name</label>
+  <input type="text" id="lastName" name="lastName" ><br><br>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age"><br><br>
+
+  <label for="meliCode">Meli Code</label>
+  <input type="text" id="meliCode" name="meliCode"><br><br>
+  
+  <label for="fieldOfStudy">Field Of Study</label>
+  <input type="text" id="fieldOfStudy" name="fieldOfStudy"><br><br>
+
+  <label for="entryDate">Entry Date</label>
+  <input type="date" id="entryDate" name="entryDate"><br><br>
+
+
+  <label for="role">Role</label>
+  <input type="number" name="role" id="role"><br><br>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<p id="message"></p>
+
+<script src="../JS Files/Teacher.js"></script>
+
+<script>
+    document.getElementById('teacherForm').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        const userName = document.getElementById('userName').value;
+        const password = document.getElementById('password').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const age = document.getElementById('age').value;
+        const meliCode = document.getElementById('meliCode').value;
+        const fieldOfStudy = document.getElementById('fieldOfStudy').value;
+        const entryDate = document.getElementById('entryDate').value;
+        const role = document.getElementById('role').value; 
+
+        const userData = {
+        userName : userName,
+        password :password,      
+        firstName : firstName,
+        lastName : lastName,
+        age : age,
+        meliCode : meliCode,
+        fieldOfStudy : fieldOfStudy,
+        entryDate : entryDate,
+        role :  2
+           
+        
+
+    };
+
+    const url = 'http://localhost:53012/University/Teachers/AddTeacher';
+
+    postData(url, userData);
+  });
+        
+</script>
+
+
+</body>
+</html>
